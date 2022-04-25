@@ -11,6 +11,7 @@ def show_must_go_on() -> None:
     bot = TeleBot(token=TELEGRAM_BOT_TOKEN)
 
     cameras = [f'rtsp://{ip_cam[0]}:554/user={login}&password={password}&channel={_}&stream=0.sdp' for _ in range(1, 5)]
+    # cameras = []
     cameras.append(f'rtsp://{ip_cam[1]}:554/user={login}&password={password}&channel=1&stream=0.sdp')
     list_cam = [VideoCapture(_) for _ in cameras]
     list_of_imgs = []
